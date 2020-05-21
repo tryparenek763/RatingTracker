@@ -1,8 +1,12 @@
 export {
-    default as Person
+  default as Person
 }
-from './person';
+  from './person';
 export {
-    default as ApplicationForm
+  default as ApplicationForm
 }
-from './form';
+  from './form';
+export {
+  default as AuthForm
+}
+  from './auth-form';

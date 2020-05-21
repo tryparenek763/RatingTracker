@@ -1,11 +1,8 @@
-.person {
-    width: 80%;
+.auth {
+    width: 50%;
     margin: auto;
     padding: var(--p-padding);
 
     border: var(--p-border);
     border-radius: var(--p-border-radius);
-}
-.rating {
-    max-width: 140px;
 }

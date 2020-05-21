@@ -2,18 +2,21 @@
   "name": "rating-tracker",
   "version": "0.1.0",
   "main": "index.jsx",
+  "proxy": "http://localhost:4000",
   "dependencies": {
     "antd": "^4.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1"
+  },
+  "devDependencies": {
+    "csscomb": "^4.3.0",
+    "eslint-config-airbnb": "^17.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [

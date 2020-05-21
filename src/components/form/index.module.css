@@ -1,5 +1,9 @@
-.input,
-.subgroups,
-.question {
-    margin: 16px 0;
+.input {
+    margin: var(--p-margin) 0;
+}
+.root {
+    padding: var(--p-padding);
+
+    border: var(--p-border);
+    border-radius: var(--p-border-radius);
 }

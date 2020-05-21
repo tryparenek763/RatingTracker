@@ -1,15 +1,32 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import {
-  Person, ApplicationForm
-} from './components'
-import styles from "./app.module.css";
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
+} from 'react-router-dom';
+import {
+  ApplicationForm, AuthForm, Person
+} from './components';
+import styles from './app.module.css';
+
 function App() {
   return (
     <div className={styles.root}>
-      <Person></Person>
-      <ApplicationForm></ApplicationForm>
+      <Router>
+        <Switch>
+          <Route path="/auth" component={AuthForm} />
+          <Route path="/profile" component={Person} />
+          <Route path="/form" component={ApplicationForm} />
+          <Redirect from="/" to="/auth" />
+          {/* <AuthForm></AuthForm>
+        <ApplicationForm> </ApplicationForm>
+        <Person></Person> */}
+        </Switch>
+      </Router>
     </div>
+
   );
 }
 
