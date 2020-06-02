@@ -23,10 +23,19 @@ function ApplicationForm() {
       ]
     }
   );
+  const [users, setUsers] = useState(
+    []
+  );
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-
+    fetch('/users', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+      .then(res => res.json())
+      .then(setUsers);
     fetch('/template', {
       headers: {
         Authorization: `Bearer ${token}`
@@ -35,12 +44,24 @@ function ApplicationForm() {
       .then(res => res.json())
       .then(setData);
   }, []);
-  const handleSubmit = (...args) => {
-    console.log(...args);
+  const handleSubmit = (data) => {
+    const token = localStorage.getItem('token');
+
+    fetch('/forms', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(data)
+    });
   };
+
   return (
     <Form className={styles.root} onFinish={handleSubmit}>
-      <Form.Item>
+      <Form.Item
+        name="userId"
+      >
         <Select
           showSearch
           placeholder="Выберите сотрудника"
@@ -48,9 +69,7 @@ function ApplicationForm() {
           filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
           }
         >
-          <Option value="jack">Jack</Option>
-          <Option value="lucy">Lucy</Option>
-          <Option value="tom">Tom</Option>
+          {users.map(user => (<Option value={user.id}>{`${user.name} ${user.surname} (${user.position.name})`}</Option>))}
         </Select>
       </Form.Item>
       {

@@ -10,16 +10,16 @@ function Person() {
     {
       name: 'Нет данных',
       surname: 'Нет данных',
-      position: 'Нет данных',
-      type: 'Нет данных',
-      level: 'Нет данных',
+      position: {
+        name: 'Нет данных'
+      },
       rating: 0
     }
   );
   useEffect(() => {
     const token = localStorage.getItem('token');
 
-    fetch('/profile', {
+    fetch('/users/me', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -39,7 +39,7 @@ function Person() {
           <Text type="secondary">{data.surname}</Text>
         </Descriptions.Item>
         <Descriptions.Item label="Позиция">
-          <Text type="secondary">{data.position}</Text>
+          <Text type="secondary">{data.position.name}</Text>
         </Descriptions.Item>
         <Descriptions.Item label="Tип">
           <Text type="secondary">{data.type}</Text>
