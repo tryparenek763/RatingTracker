@@ -2,7 +2,7 @@
   "name": "rating-tracker",
   "version": "0.1.0",
   "main": "index.jsx",
-  "proxy": "http://localhost:4000",
+  "proxy": "https://peaceful-gorge-66629.herokuapp.com/",
   "dependencies": {
     "antd": "^4.1.1",
     "react": "=16.13.1",
