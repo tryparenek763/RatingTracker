@@ -5,6 +5,9 @@ import styles from './index.module.css';
 
 const { Text } = Typography;
 
+function halfRound(num) {
+  return Math.floor(num / 0.5) * 0.5;
+}
 function Person() {
   const [data, setData] = useState(
     {
@@ -28,7 +31,6 @@ function Person() {
       .then(setData);
   }, []);
 
-
   return (
     <div>
       <Descriptions title="Профиль" className={styles.person} layout="vertical">
@@ -48,7 +50,7 @@ function Person() {
           <Text type="secondary">{data.level}</Text>
         </Descriptions.Item>
         <Descriptions.Item label="Рейтинг">
-          <Rate disabled defaultValue={data.rating} count={10} className={styles.rating} key={data.rating} />
+          <Rate disabled allowHalf defaultValue={halfRound(data.rating)} count={10} className={styles.rating} key={data.rating} />
         </Descriptions.Item>
       </Descriptions>
     </div>
