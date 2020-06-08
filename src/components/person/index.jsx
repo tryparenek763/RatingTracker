@@ -22,7 +22,7 @@ function Person() {
   useEffect(() => {
     const token = localStorage.getItem('token');
 
-    fetch('/users/me', {
+    fetch('/api/users/me', {
       headers: {
         Authorization: `Bearer ${token}`
       }
