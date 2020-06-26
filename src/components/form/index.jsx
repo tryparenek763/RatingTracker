@@ -29,14 +29,14 @@ function ApplicationForm() {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('/api/users', {
+    fetch('/users', {
       headers: {
         Authorization: `Bearer ${token}`
       }
     })
       .then(res => res.json())
       .then(setUsers);
-    fetch('/api/template', {
+    fetch('/template', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -47,7 +47,7 @@ function ApplicationForm() {
   const handleSubmit = (data) => {
     const token = localStorage.getItem('token');
 
-    fetch('/api/forms', {
+    fetch('/forms', {
       headers: {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'

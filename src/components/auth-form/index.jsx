@@ -16,7 +16,7 @@ function AuthForm({ history }) {
     localStorage.setItem('token', json.access_token);
   };
   const handleSubmit = ({ username, password }) => {
-    fetch('/api/auth/login', {
+    fetch('/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

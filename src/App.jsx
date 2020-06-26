@@ -10,6 +10,7 @@ import {
   ApplicationForm, AuthForm, Person
 } from './components';
 import styles from './app.module.css';
+import PersonList from './components/person-list';
 
 function App() {
   return (
@@ -18,15 +19,12 @@ function App() {
         <Switch>
           <Route path="/auth" component={AuthForm} />
           <Route path="/profile" component={Person} />
+          <Route path="/profile-list" component={PersonList} />
           <Route path="/form" component={ApplicationForm} />
           <Redirect from="/" to="/auth" />
-          {/* <AuthForm></AuthForm>
-        <ApplicationForm> </ApplicationForm>
-        <Person></Person> */}
         </Switch>
       </Router>
     </div>
-
   );
 }
 

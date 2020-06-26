@@ -22,7 +22,7 @@ function Person() {
   useEffect(() => {
     const token = localStorage.getItem('token');
 
-    fetch('/api/users/me', {
+    fetch('/users/me', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -50,7 +50,7 @@ function Person() {
           <Text type="secondary">{data.level}</Text>
         </Descriptions.Item>
         <Descriptions.Item label="Рейтинг">
-          <Rate disabled allowHalf defaultValue={halfRound(data.rating)} count={10} className={styles.rating} key={data.rating} />
+          <Text type="secondary">{halfRound(data.rating)}</Text>
         </Descriptions.Item>
       </Descriptions>
     </div>

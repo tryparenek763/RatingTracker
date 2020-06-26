@@ -1,0 +1,4 @@
+.personList {
+    border: var(--p-border);
+    border-radius: var(--p-border-radius);
+}
