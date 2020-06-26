@@ -12,8 +12,7 @@
   },
   "devDependencies": {
     "csscomb": "^4.3.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "http-proxy-middleware": "^1.0.4"
+    "eslint-config-airbnb": "^17.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
